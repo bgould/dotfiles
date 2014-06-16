@@ -1,7 +1,7 @@
+" 256 colors
+let &t_Co = 256
 " enable colors -- google 'enable colors in vim using putty' or something like that
 if &term =~ "xterm"
-  " 256 colors
-  let &t_Co = 256
   " restore screen after quitting
   let &t_ti = "\<Esc>7\<Esc>[r\<Esc>[?47h"
   let &t_te = "\<Esc>[?47l\<Esc>8"
