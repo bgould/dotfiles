@@ -1,18 +1,20 @@
 " enable colors -- google 'enable colors in vim using putty' or something like that
-if &term =~ "xterm"
+" if &term =~ "xterm"
   " 256 colors
-  let &t_Co = 256
+"  let &t_Co = 256
   " restore screen after quitting
-  let &t_ti = "\<Esc>7\<Esc>[r\<Esc>[?47h"
-  let &t_te = "\<Esc>[?47l\<Esc>8"
-  if has("terminfo")
-    let &t_Sf = "\<Esc>[3%p1%dm"
-    let &t_Sb = "\<Esc>[4%p1%dm"
-  else
-    let &t_Sf = "\<Esc>[3%dm"
-    let &t_Sb = "\<Esc>[4%dm"
-  endif
-endif
+"  let &t_ti = "\<Esc>7\<Esc>[r\<Esc>[?47h"
+"  let &t_te = "\<Esc>[?47l\<Esc>8"
+"  if has("terminfo")
+"    let &t_Sf = "\<Esc>[3%p1%dm"
+"    let &t_Sb = "\<Esc>[4%p1%dm"
+"  else
+"    let &t_Sf = "\<Esc>[3%dm"
+"    let &t_Sb = "\<Esc>[4%dm"
+"  endif
+" endif
+
+let &t_Co = 256
 
 execute pathogen#infect()
 
@@ -48,20 +50,20 @@ set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 
 " move vertically by visual line
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 
 " eclim settings
 let g:EclimProjectTreeAutoOpen=1
 let g:EclimProjectTreeAutoOpenProjects="CURRENT"
 
 " navigate splits more easily
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
 " more natural split opening
-set splitbelow
-set splitright
+" set splitbelow
+" set splitright
 
