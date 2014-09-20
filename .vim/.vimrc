@@ -1,19 +1,3 @@
-" enable colors -- google 'enable colors in vim using putty' or something like that
-" if &term =~ "xterm"
-  " 256 colors
-"  let &t_Co = 256
-  " restore screen after quitting
-"  let &t_ti = "\<Esc>7\<Esc>[r\<Esc>[?47h"
-"  let &t_te = "\<Esc>[?47l\<Esc>8"
-"  if has("terminfo")
-"    let &t_Sf = "\<Esc>[3%p1%dm"
-"    let &t_Sb = "\<Esc>[4%p1%dm"
-"  else
-"    let &t_Sf = "\<Esc>[3%dm"
-"    let &t_Sb = "\<Esc>[4%dm"
-"  endif
-" endif
-
 let &t_Co = 256
 
 execute pathogen#infect()
@@ -25,7 +9,7 @@ let g:SuperTabDefaultCompletionType = "<c-p>"
 colors zenburn
 
 set showmode
-
+set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
@@ -57,6 +41,21 @@ nnoremap <leader><space> :nohlsearch<CR>
 let g:EclimProjectTreeAutoOpen=1
 let g:EclimProjectTreeAutoOpenProjects="CURRENT"
 
+" UltiSnips settings
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
+" vertical line indentation
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui  = '#09AA08'
+let g:indentLine_char = '|'
+
+let delimitMate_expand_cr = 1
+
+" CtrlP configuration
+let g:ctrlp_map = '<leader>t'
+set wildignore+=*/target/*
+let g:ctrlp_use_caching=0
+
 " navigate splits more easily
 " nnoremap <C-J> <C-W><C-J>
 " nnoremap <C-K> <C-W><C-K>
@@ -67,3 +66,4 @@ let g:EclimProjectTreeAutoOpenProjects="CURRENT"
 " set splitbelow
 " set splitright
 
+autocmd Filetype make setlocal noexpandtab
