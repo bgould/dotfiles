@@ -4,10 +4,13 @@ execute pathogen#infect()
 
 let g:SuperTabDefaultCompletionType = "<c-p>"
 
+let g:solarized_termcolors=256
+
 " use this for high contrast if preferred
-" let g:zenburn_high_Contrast=1
+let g:zenburn_high_Contrast=0
 colors zenburn
 
+set number
 set showmode
 set shiftwidth=4
 set tabstop=4
