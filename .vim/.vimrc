@@ -2,9 +2,9 @@ let &t_Co = 256
 
 execute pathogen#infect()
 
-let g:SuperTabDefaultCompletionType = "<c-p>"
+" let g:SuperTabDefaultCompletionType = "<c-p>"
 
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 
 " use this for high contrast if preferred
 let g:zenburn_high_Contrast=0
@@ -16,6 +16,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
+set colorcolumn=81
 
 " set number
 set showcmd
@@ -29,6 +30,9 @@ set backspace=indent,eol,start " backspace through anything
 
 syntax on
 filetype indent on
+filetype plugin on
+
+set omnifunc=syntaxcomplete#Complete
 
 set incsearch
 set hlsearch
@@ -41,11 +45,10 @@ nnoremap <leader><space> :nohlsearch<CR>
 " nnoremap k gk
 
 " eclim settings
-let g:EclimProjectTreeAutoOpen=1
-let g:EclimProjectTreeAutoOpenProjects="CURRENT"
+let g:EclimCompletionMethod = 'omnifunc'
 
 " UltiSnips settings
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+" let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " vertical line indentation
 let g:indentLine_color_term = 239
