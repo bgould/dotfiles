@@ -25,3 +25,6 @@
 [submodule "mate-terminal/solarized-mate-terminal"]
 	path = mate-terminal/solarized-mate-terminal
 	url = https://github.com/oz123/solarized-mate-terminal.git
+[submodule ".vim/bundle/YouCompleteMe"]
+	path = .vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
