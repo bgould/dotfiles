@@ -2,13 +2,13 @@ let &t_Co = 256
 
 execute pathogen#infect()
 
-" let g:SuperTabDefaultCompletionType = "<c-p>"
-
-" let g:solarized_termcolors=256
+" put backup and swap files in different directory
+set directory=~/tmp
 
 " use this for high contrast if preferred
-let g:zenburn_high_Contrast=0
+let g:zenburn_high_Contrast=1
 colors zenburn
+set guifont=Source\ Code\ Pro\ Medium\ 14
 
 set number
 set showmode
@@ -17,8 +17,6 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 set colorcolumn=81
-
-" set number
 set showcmd
 set cursorline
 set wildmenu
@@ -27,6 +25,29 @@ set ruler
 set incsearch
 set autoindent
 set backspace=indent,eol,start " backspace through anything
+
+autocmd BufNewFile src/*/java/*.java call InsertJavaPackage()
+function! InsertJavaPackage()
+  let filename = expand("%")
+  let filename = substitute(filename, "\.java$", "", "")
+  let dir = getcwd() . "/" . filename
+  let dir = substitute(dir, "^.*\/src\/.*\/java\/", "", "")
+  let dir = substitute(dir, "\/[^\/]*$", "", "")
+  let dir = substitute(dir, "\/", ".", "g")
+  let filename = substitute(filename, "^.*\/", "", "")
+  let dir = "package " . dir . ";"
+  let result = append(0, dir)
+  let result = append(1, "}")
+  let result = append(1, "")
+  let result = append(1, "")
+  let result = append(1, "")
+  let result = append(1, "public class " . filename . " {")
+  let result = append(1, " */")
+  let result = append(1, " * @author bcg")
+  let result = append(1, " * ")
+  let result = append(1, "/*")
+  let result = append(1, "")
+endfunction
 
 syntax on
 filetype indent on
@@ -41,11 +62,15 @@ set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 
 " move vertically by visual line
-" nnoremap j gj
-" nnoremap k gk
+nnoremap j gj
+nnoremap k gk
+
+nnoremap t gt
+nnoremap T gT
 
 " eclim settings
 let g:EclimCompletionMethod = 'omnifunc'
+map ^O :JavaImportOrganize^M
 
 " UltiSnips settings
 " let g:UltiSnipsSnippetDirectories=["UltiSnips"]
@@ -56,11 +81,6 @@ let g:indentLine_color_gui  = '#09AA08'
 let g:indentLine_char = '|'
 
 let delimitMate_expand_cr = 1
-
-" CtrlP configuration
-let g:ctrlp_map = '<leader>t'
-set wildignore+=*/target/*
-let g:ctrlp_use_caching=0
 
 " navigate splits more easily
 " nnoremap <C-J> <C-W><C-J>
