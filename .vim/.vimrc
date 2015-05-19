@@ -8,7 +8,7 @@ set directory=~/tmp
 " use this for high contrast if preferred
 let g:zenburn_high_Contrast=1
 colors zenburn
-set guifont=Source\ Code\ Pro\ Medium\ 14
+set guifont=Source\ Code\ Pro\ Medium\ 11
 
 set number
 set showmode
@@ -70,16 +70,18 @@ nnoremap T gT
 
 " eclim settings
 let g:EclimCompletionMethod = 'omnifunc'
-map ^O :JavaImportOrganize^M
+nnoremap <C-S-o> :JavaImportOrganize<CR>
+imap <C-Space> <C-X><C-O>
+imap <C-@> <C-Space>
 
 " UltiSnips settings
 " let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " vertical line indentation
-let g:indentLine_color_term = 239
-let g:indentLine_color_gui  = '#09AA08'
+let g:indentLine_color_term = 239 
+let g:indentLine_color_gui  = '#333333'
 let g:indentLine_char = '|'
-
+        
 let delimitMate_expand_cr = 1
 
 " navigate splits more easily
