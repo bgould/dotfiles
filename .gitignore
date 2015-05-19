@@ -1,3 +1,9 @@
 .vim/.netrwhist
 .vim/eclim
+
 .vim/plugin/eclim.vim
+
+.vim/autoload/youcompleteme.vim
+.vim/doc/youcompleteme.txt
+.vim/doc/tags
+.vim/plugin/youcompleteme.vim
