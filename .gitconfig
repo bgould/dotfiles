@@ -1,0 +1,5 @@
+[user]
+	email = bcg@example.com
+	name = BCG
+[push]
+	default = simple
