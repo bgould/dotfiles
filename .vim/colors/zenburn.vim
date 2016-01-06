@@ -559,3 +559,4 @@ endif
 
 " TODO check for more obscure syntax groups that they're ok
 
+hi Normal ctermbg=none
