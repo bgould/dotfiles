@@ -5,6 +5,11 @@ execute pathogen#infect()
 " put backup and swap files in different directory
 set directory=~/tmp
 
+" slime
+let g:slime_target="tmux"
+let g:slime_paste_file = "$HOME/tmp/.slime_paste"
+let g:slime_default_config = { "socket_name" : "default", "target_pane": ":.1"}
+
 " use this for high contrast if preferred
 let g:zenburn_high_Contrast=1
 colors zenburn
@@ -21,7 +26,7 @@ set showcmd
 set cursorline
 set wildmenu
 set showmatch
-set ruler
+" set ruler
 set incsearch
 set autoindent
 set backspace=indent,eol,start " backspace through anything
@@ -51,9 +56,9 @@ nnoremap t gt
 nnoremap T gT
 
 " eclim settings
-set omnifunc=syntaxcomplete#Complete
-let g:EclimCompletionMethod = 'omnifunc'
-nnoremap <C-S-o> :JavaImportOrganize<CR>
+"set omnifunc=syntaxcomplete#Complete
+"let g:EclimCompletionMethod = 'omnifunc'
+"nnoremap <C-S-o> :JavaImportOrganize<CR>
 imap <C-Space> <C-X><C-O>
 imap <C-@> <C-Space>
 
@@ -81,7 +86,7 @@ set splitright
 autocmd Filetype make setlocal noexpandtab
 
 " shortcut to toggle the nerdtree menu
-nnoremap <leader>t :NERDTreeTabsToggle<CR>
+" nnoremap <leader>t :NERDTreeTabsToggle<CR>
 
 " shortcut to clear CtrlP caches
 nnoremap <leader>p :CtrlPClearAllCaches<CR>

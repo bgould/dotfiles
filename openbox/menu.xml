@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id="root-menu" label="Openbox 3">
+  <item label="Run">
+    <action name="Execute"><execute>lxpanelctl run</execute></action>
+  </item>
+  <separator />
+  <menu id="home" label="Home">
+    <item label="Home Folder">
+      <action name="Execute"><execute>nautilus --no-desktop</execute></action>
+    </item>
+    <item label="Web Browser">
+      <action name="Execute"><execute>x-www-browser</execute></action>
+    </item>
+    <item label="Email">
+      <action name="Execute"><execute>icedove</execute></action>
+    </item>
+    <item label="KeePassX">
+      <action name="Execute"><execute>keepassx</execute></action>
+    </item>
+    <item label="Calculator">
+      <action name="Execute"><execute>galculator</execute></action>
+    </item>
+    <item label="Iridium Browser">
+      <action name="Execute"><execute>iridium-browser</execute></action>
+    </item>
+    <item label="Terminal emulator">
+      <action name="Execute"><execute>x-terminal-emulator</execute></action>
+    </item>
+  </menu>
+  <menu id="devtools" label="Development">
+    <item label="Eclipse">
+      <action name="Execute"><execute>/home/bcg/bin/eclipse</execute></action>
+    </item>
+    <item label="soapUI">
+      <action name="Execute"><execute>/home/bcg/tools/soapui/bin/soapui.sh &</execute></action>
+    </item>
+  </menu>
+  <!-- This requires the presence of the 'menu' package to work -->
+  <menu id="/Debian" />
+  <separator />
+  <menu id="client-list-menu" />
+  <separator />
+  <menu id="openbox" label="Openbox">
+    <item label="ObConf">
+      <action name="Execute"><execute>obconf</execute></action>
+    </item>
+    <item label="Reconfigure">
+      <action name="Reconfigure" />
+    </item>
+    <item label="Restart">
+      <action name="Restart" />
+    </item>
+  </menu>
+  <separator />
+  <item label="Suspend">
+    <action name="Execute"><execute>sudo pm-suspend</execute></action>
+  </item>
+  <item label="Exit">
+    <action name="Exit" />
+  </item>
+</menu>
+
+</openbox_menu>
