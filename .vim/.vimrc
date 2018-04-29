@@ -10,6 +10,39 @@ let g:slime_target="tmux"
 let g:slime_paste_file = "$HOME/tmp/.slime_paste"
 let g:slime_default_config = { "socket_name" : "default", "target_pane": ":.1"}
 
+" vim-go tutorial
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+
+autocmd FileType go nmap <Leader>i <Plug>(go-imports)
+
+autocmd FileType go nmap <C-O> <Plug>(go-imports)
+
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+let g:go_auto_sameids = 1
+
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
 " use this for high contrast if preferred
 let g:zenburn_high_Contrast=1
 colors zenburn
@@ -59,7 +92,7 @@ nnoremap T gT
 "set omnifunc=syntaxcomplete#Complete
 "let g:EclimCompletionMethod = 'omnifunc'
 "nnoremap <C-S-o> :JavaImportOrganize<CR>
-imap <C-Space> <C-X><C-O>
+" imap <C-Space> <C-X><C-O>
 imap <C-@> <C-Space>
 
 " UltiSnips settings
