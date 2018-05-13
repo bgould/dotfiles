@@ -5,11 +5,6 @@ execute pathogen#infect()
 " put backup and swap files in different directory
 set directory=~/tmp
 
-" slime
-let g:slime_target="tmux"
-let g:slime_paste_file = "$HOME/tmp/.slime_paste"
-let g:slime_default_config = { "socket_name" : "default", "target_pane": ":.1"}
-
 " vim-go tutorial
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
@@ -48,7 +43,7 @@ let g:zenburn_high_Contrast=1
 colors zenburn
 set guifont=Source\ Code\ Pro\ Medium\ 9
 
-set number
+"" set number
 set showmode
 set shiftwidth=2
 set tabstop=2
