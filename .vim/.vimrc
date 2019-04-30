@@ -5,6 +5,8 @@ execute pathogen#infect()
 " put backup and swap files in different directory
 set directory=~/tmp
 
+let g:go_fmt_command = "goimports"
+
 " vim-go tutorial
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
