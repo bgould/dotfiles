@@ -5,6 +5,9 @@ execute pathogen#infect()
 " put backup and swap files in different directory
 set directory=~/tmp
 
+" do not show stupid q: window
+map q: :q
+
 let g:go_fmt_command = "goimports"
 
 " vim-go tutorial
@@ -58,14 +61,13 @@ set wildmenu
 set showmatch
 " set ruler
 set incsearch
-set autoindent
 set backspace=indent,eol,start " backspace through anything
 
 " integrate with the system clipboard
 set clipboard=unnamedplus
 
-set laststatus=2 " always show the status line
-:set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+"set laststatus=2 " always show the status line
+"":set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 syntax on
 filetype indent on
@@ -139,5 +141,17 @@ if exists('$TMUX')
   nnoremap <silent> <C-a>j :call TmuxOrSplitSwitch('j', 'D')<cr>
   nnoremap <silent> <C-a>k :call TmuxOrSplitSwitch('k', 'U')<cr>
   nnoremap <silent> <C-a>l :call TmuxOrSplitSwitch('l', 'R')<cr>
+endif
+
+
+" =================== vim-airline ========================
+
+let g:airline_theme='zenburn'
+let g:airline_powerline_fonts = 1
+
+" set to use powerline fonts when not in a ssh session
+let g:remoteSession = ($STY == "")
+if !g:remoteSession
+  let g:airline_powerline_fonts = 1
 endif
 
