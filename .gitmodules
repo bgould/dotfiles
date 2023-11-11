@@ -6,7 +6,7 @@
 	url = https://github.com/Yggdroot/indentLine.git
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule ".vim/bundle/vim-go"]
   path = .vim/bundle/vim-go
   url = https://github.com/fatih/vim-go
